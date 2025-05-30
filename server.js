@@ -12,7 +12,7 @@ const { cleanRoomsAndUsers } = require("./utils/groomings");
 require("dotenv").config();
 
 const corsOptions = {
-  origin: process.env.CLIENT_URL,
+  origin: "*", // ou use process.env.CLIENT_URL para mais segurança
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization", "Cache-Control", "Pragma"]
@@ -42,7 +42,7 @@ const server = app.listen(PORT, () => {
 
 const io = socketIO(server, {
   cors: {
-    origin: process.env.CLIENT_URL,
+    origin: "*", // libera tudo
     methods: ["GET", "POST"],
     credentials: true,
   },

@@ -10,6 +10,7 @@ exports.fetchGet = async (req, res) => {
   let apiUrl = decodeURIComponent(endpoint);
   if (!apiUrl.match(/^https?:\/\//)) {
     apiUrl = `https://${apiUrl}`;
+    console.log("API URL TESTE ", apiUrl)
   }
   const apiUrlPath = new URL(apiUrl).pathname;
   const apiUrlSearch = new URL(apiUrl).search;
